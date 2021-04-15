@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:XamarinLab3"
+             mc:Ignorable="d"
+             x:Class="XamarinLab3.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainModel/>
+    </ContentPage.BindingContext>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image x:Name="imgPhoto" />
+        <StackLayout Grid.Row="1">
+            <Button x:Name="btnCamera" Text="Take a Photo" />
+            <Entry x:Name="entFirstName" Text="{Binding FirstName}"  Placeholder="First name" />
+            <Entry x:Name="entLastName" Text="{Binding LastName}" Placeholder="Last name" />
+            <Entry x:Name="entPhoneNumber" Text="{Binding PhoneNumber}" Placeholder="Phone number" Keyboard="Telephone" />
+
+            <Label Text="{Binding DisplayName}"/>
+            <Label Text="{Binding DisplayLastName}"/>
+            <Label Text="{Binding DisplayPhoneNumber}"/>
+
+        </StackLayout>
+        <StackLayout Grid.Row="2" VerticalOptions="EndAndExpand">
+            <Button x:Name="btnSave" Text="Save data" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
