@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ccpmobile.Models.RegisterPage">
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Register an account" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Create login:"/>
+        <Entry x:Name="txtLogin" Placeholder="Login"/>
+        <Label Text="Create password:"/>
+        <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="true"/>
+        <Label Text="Confirm password:"/>
+        <Entry x:Name="txtPasswordConfirm" Placeholder="Password" IsPassword="true"/>
+
+        <Button x:Name="btnRegister" Text="Sign Up"/>
+    </StackLayout>
+</ContentPage>

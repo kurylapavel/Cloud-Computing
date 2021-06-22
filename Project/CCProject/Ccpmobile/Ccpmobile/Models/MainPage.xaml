@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ccpmobile.Models.MainPage"
+             Title="Steam mobile authentificator">
+    <ContentPage.Content>
+    <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lbCode" Text="*****" FontSize="30" TextColor="Black" HorizontalOptions="Center" Padding="140,20,0,20" />
+                <ImageButton x:Name="imgCopy" Source="Images/copy.png" WidthRequest="35" BackgroundColor="Transparent" />
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnAddMafile" Text="Add new maFile(s).." WidthRequest="200"/>
+                <Button x:Name="btnRemoveMafile" Text="Remove maFile" HorizontalOptions="Center" WidthRequest="200"/>
+            </StackLayout>
+            
+            <Label Text="Safe mode:"/>
+            <Switch x:Name="swSafeMode" IsToggled="False" HorizontalOptions="Start"/>
+            <ListView ItemsSource="{Binding MaFilesList}"
+                   HasUnevenRows="true"
+                   SeparatorVisibility="Default"
+                   ItemTapped="OnItemSelected"
+                   x:Name="listview1" SeparatorColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="1"
+                                       Text="{Binding account_name}"
+                                       VerticalOptions="End"/>
+                            <Label Grid.Column="1"
+                                       Grid.Row="1"
+                                       VerticalOptions="Start"
+                                       Text="{Binding device_id}"/>
+                        </Grid>
+                    </ViewCell>
+                    <!-- <ViewCell Text="" TextColor="Black"/>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

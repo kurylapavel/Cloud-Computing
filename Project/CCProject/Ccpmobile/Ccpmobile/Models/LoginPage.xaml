@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ccpmobile.Models.LoginPage">
+    
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Steam Mobile Authenticator" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Login:"/>
+        <Entry x:Name="txtLogin" Placeholder="Login"/>
+        <Label Text="Password:"/>
+        <Entry x:Name="txtPassword" Placeholder="Password"/>
+        <Button x:Name="btnSignIn" Text="Sign In"/>
+
+        <Label Text="Don't have an account?" />
+        <Button x:Name="btnRegister" Text="Sign Up"/>
+    </StackLayout>
+    
+</ContentPage>
